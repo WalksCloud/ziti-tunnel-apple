@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>MobilePacketTunnelProvider</string>
+	<string>Z-Gate Agent MobilePacketTunnelProvider</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-    <key>TeamIdentifierPrefix</key>
-    <string>$(TeamIdentifierPrefix)</string>
-    <key>IOS_APP_IDENTIFIER</key>
-    <string>$(IOS_APP_IDENTIFIER)</string>
-    <key>IOS_EXT_IDENTIFIER</key>
-    <string>$(IOS_EXT_IDENTIFIER)</string>
+	<key>TeamIdentifierPrefix</key>
+	<string>$(TeamIdentifierPrefix)</string>
+	<key>IOS_APP_IDENTIFIER</key>
+	<string>$(IOS_APP_IDENTIFIER)</string>
+	<key>IOS_EXT_IDENTIFIER</key>
+	<string>$(IOS_EXT_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

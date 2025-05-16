@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>MobileShare</string>
+	<string>Z-Gate Agent MobileShare</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -47,9 +47,9 @@
 	</dict>
 	<key>TeamIdentifierPrefix</key>
 	<string>$(TeamIdentifierPrefix)</string>
-    <key>IOS_APP_IDENTIFIER</key>
-    <string>$(IOS_APP_IDENTIFIER)</string>
-    <key>IOS_EXT_IDENTIFIER</key>
-    <string>$(IOS_EXT_IDENTIFIER)</string>
+	<key>IOS_APP_IDENTIFIER</key>
+	<string>$(IOS_APP_IDENTIFIER)</string>
+	<key>IOS_EXT_IDENTIFIER</key>
+	<string>$(IOS_EXT_IDENTIFIER)</string>
 </dict>
 </plist>
