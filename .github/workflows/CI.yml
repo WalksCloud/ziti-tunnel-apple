@@ -146,7 +146,7 @@ jobs:
           -configuration ${CONFIG} -scheme ${SCHEME} -sdk ${SDK} -destination ${DESTINATION} \
           -archivePath ./archives/${SCHEME}
 
-    - name: Export 
+    - name: Export
       env:
         SCHEME: ${{ matrix.spec.scheme }}
         AUTH_KEY_ID: ${{ secrets.APPLE_DEVELOPER_KEY_ID }}
@@ -157,7 +157,7 @@ jobs:
           -authenticationKeyID ${AUTH_KEY_ID} -authenticationKeyIssuerID ${AUTH_KEY_ISSUER_ID} \
           -exportArchive -exportPath ./archives/${SCHEME} \
           -exportOptionsPlist ./etc/exportOptionsRelease.plist \
-          -archivePath ./archives/${SCHEME}.xcarchive 
+          -archivePath ./archives/${SCHEME}.xcarchive
 
     - name: Validate
       id: validate_app
@@ -175,7 +175,7 @@ jobs:
         echo "package_path=${fn}" >> $GITHUB_OUTPUT
 
     - name: Upload
-      if: github.event_name == 'pull_request'
+#      if: github.event_name == 'pull_request'
       env:
         AUTH_KEY_ID: ${{ secrets.APPLE_DEVELOPER_KEY_ID }}
         AUTH_KEY_ISSUER_ID: ${{ secrets.APPLE_DEVELOPER_KEY_ISSUER_ID }}
@@ -196,7 +196,7 @@ jobs:
           --type ${type} --apiKey ${AUTH_KEY_ID} --apiIssuer ${AUTH_KEY_ISSUER_ID}
 
     - name: Wait For Build Processing
-      if: github.event_name == 'pull_request'
+#      if: github.event_name == 'pull_request'
       env:
         bearer: "${{ steps.create_acs_token.outputs.bearer }}"
         uploaded_build: "${{ steps.configure_versions.outputs.next_bundle_version }}"
