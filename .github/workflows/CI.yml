@@ -90,8 +90,8 @@ jobs:
         all_app_info=$(xcrun altool --list-apps --apiKey ${AUTH_KEY_ID} --apiIssuer ${AUTH_KEY_ISSUER_ID} --output-format json)
         app_id="${{ steps.store_xcconfig.outputs.app_identifier }}"
         app_info=$(echo ${all_app_info} | jq -r --arg APPID ${app_id} '.applications[] | select(.ReservedBundleIdentifier | contains($APPID))')
-        version_number=$(echo ${app_info} | jq '."Version Number"')
-        short_version=$(echo ${app_info} | jq '.ShortVersion')
+        version_number=$(echo ${app_info} | jq '.MarketingVersion')
+        short_version=$(echo ${app_info} | jq '.MarketingVersion')
         application=$(echo ${app_info} | jq '.Application')
         apple_id=$(echo ${app_info} | jq '.AppleID')
         team_id=$(echo ${app_info} | jq '.WWDRIdentifier')
@@ -111,7 +111,7 @@ jobs:
         url="https://api.appstoreconnect.apple.com/v1/builds?filter[app]=${app}&fields[builds]=version&limit=1"
         acs_vers=$(curl -g -s -H "Authorization: Bearer ${bearer}" "${url}" | jq '.data[].attributes.version|tonumber')
         echo "ACS Vers: ${acs_vers}"
-        curr=$([[ -z "${acs_vers}" ]] && echo ${steps.get_app_info.outputs.version_number} || echo ${acs_vers})
+        curr=$([[ -z "${acs_vers}" ]] && echo ${{ steps.get_app_info.outputs.version_number }} || echo ${acs_vers})
         echo "Curr: ${curr}"
         next=$((${curr}+1))
         echo "Bumping version from ${curr} to ${next}"
