@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Z-Gate Agent PacketTunnelProvider</string>
+	<string>Z-Gate Agent Desktop</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,11 +31,11 @@
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright NetFoundry. All rights reserved.</string>
-    <key>TeamIdentifierPrefix</key>
-    <string>$(TeamIdentifierPrefix)</string>
-    <key>MAC_APP_IDENTIFIER</key>
-    <string>$(MAC_APP_IDENTIFIER)</string>
-    <key>MAC_EXT_IDENTIFIER</key>
-    <string>$(MAC_EXT_IDENTIFIER)</string>
+	<key>TeamIdentifierPrefix</key>
+	<string>$(TeamIdentifierPrefix)</string>
+	<key>MAC_APP_IDENTIFIER</key>
+	<string>$(MAC_APP_IDENTIFIER)</string>
+	<key>MAC_EXT_IDENTIFIER</key>
+	<string>$(MAC_EXT_IDENTIFIER)</string>
 </dict>
 </plist>

@@ -68,11 +68,11 @@ class ProviderConfig : NSObject {
     var dnsAddresses:[String] = ["100.64.0.2"]
     var fallbackDnsEnabled = false
     var fallbackDns:String = "1.1.1.1"
-    var username = "Ziti"
+    var username = "Z-Gate"
 #if os(macOS)
-    var localizedDescription = "Ziti Desktop Edge"
+    var localizedDescription = "Z-Gate Agent Desktop"
 #else
-    var localizedDescription = "Ziti Mobile Edge"
+    var localizedDescription = "Z-Gate Agent Mobile"
 #endif
     var logLevel:Int = Int(ZitiLog.LogLevel.INFO.rawValue)
     var interceptMatchedDns:Bool = true

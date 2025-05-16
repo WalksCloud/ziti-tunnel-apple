@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Z-Gate Agent ZitiMobilePacketTunnel</string>
+	<string>Z-Gate Agent Mobile</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -145,7 +145,7 @@
 	<key>ZitiSupportEmail</key>
 	<string>$(SUPPORT_EMAIL)</string>
 	<key>ZitiSupportSubject</key>
-	<string>Ziti Support (iOS)</string>
+	<string>Z-Gate Support</string>
 	<key>TeamIdentifierPrefix</key>
 	<string>$(TeamIdentifierPrefix)</string>
 	<key>IOS_APP_IDENTIFIER</key>
