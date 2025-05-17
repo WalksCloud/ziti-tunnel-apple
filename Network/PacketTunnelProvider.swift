@@ -37,7 +37,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         zLog.debug("")
         zLog.info(versionString)
         
-        CZiti.Ziti.setAppInfo(Bundle.main.bundleIdentifier ?? "Ziti", Version.str)
+        CZiti.Ziti.setAppInfo(Bundle.main.bundleIdentifier ?? "Z-Gate Agent", Version.str)
         
         // Give a short timeout for services to load, avoiding need to reassert tunnel networking settings
         // (and associated user notification)

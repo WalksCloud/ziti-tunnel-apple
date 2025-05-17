@@ -12,21 +12,21 @@
             <objects>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Ziti_Desktop_Edge" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target"/>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Ziti Desktop Edge" id="1Xt-HY-uBw">
-                                <menu key="submenu" title="Ziti Desktop Edge" systemMenu="apple" id="uQy-DD-JDr">
+                            <menuItem title="Z-Gate Agent Desktop" id="1Xt-HY-uBw">
+                                <menu key="submenu" title="Z-Gate Agent Desktop" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Ziti Desktop Edge" id="5kV-Vb-QxS">
+                                        <menuItem title="About Z-Gate Agent Desktop" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Ziti Desktop Edge" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Z-Gate Agent Desktop" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -48,7 +48,7 @@
             <objects>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Ziti Desktop Edge" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Z-Gate Agent Desktop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="667" height="525"/>
@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-74" y="250"/>
         </scene>
-        <!--Ziti Desktop Edge Log Rotate Config-->
+        <!--Z-Gate Agent Desktop Log Rotate Config-->
         <scene sceneID="Csi-Dk-8zL">
             <objects>
-                <viewController title="Ziti Desktop Edge Log Rotate Config" storyboardIdentifier="LOG_ROTATION_VIEW_CONTROLLER" id="fpu-wK-uPF" customClass="LogRotationConfigViewController" customModule="Ziti_Desktop_Edge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Z-Gate Agent Desktop Log Rotate Config" storyboardIdentifier="LOG_ROTATION_VIEW_CONTROLLER" id="fpu-wK-uPF" customClass="LogRotationConfigViewController" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wfF-ui-KgW">
                         <rect key="frame" x="0.0" y="0.0" width="378" height="269"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -335,7 +335,7 @@ Gw
         <scene sceneID="dH0-xe-wp3">
             <objects>
                 <windowController storyboardIdentifier="LOG_ROTATION_WINDOW" showSeguePresentationStyle="single" id="4gk-5C-zmf" sceneMemberID="viewController">
-                    <window key="window" title="Ziti Desktop Edge Log Rotate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="REZ-vL-e9e">
+                    <window key="window" title="Z-Gate Agent Desktop Log Rotate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="REZ-vL-e9e">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="268" y="330" width="480" height="270"/>
@@ -359,8 +359,8 @@ Gw
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Ziti_Desktop_Edge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="MainView" customModule="Ziti_Desktop_Edge" customModuleProvider="target">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="MainView" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="525"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -374,7 +374,7 @@ Gw
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-Hc-OL2">
                                 <rect key="frame" x="715" y="483" width="106" height="32"/>
-                                <buttonCell key="cell" type="push" title="Turn Ziti On" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lV3-PW-O4Y">
+                                <buttonCell key="cell" type="push" title="Turn Z-Gate On" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lV3-PW-O4Y">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -459,7 +459,7 @@ Gw
                                             <action selector="onEnrollButton:" target="XfG-lQ-9wD" id="JMS-Fb-PNX"/>
                                         </connections>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Rw-cE-4Xu" customClass="EditableNSTextField" customModule="Ziti_Desktop_Edge" customModuleProvider="target">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Rw-cE-4Xu" customClass="EditableNSTextField" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target">
                                         <rect key="frame" x="213" y="386" width="380" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="654ad670-2f85-11e9-af13-5329fe65c42d" id="PVC-Xa-NhD">
                                             <font key="font" metaFont="system"/>
@@ -467,7 +467,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-ab-8PC" customClass="EditableNSTextField" customModule="Ziti_Desktop_Edge" customModuleProvider="target">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-ab-8PC" customClass="EditableNSTextField" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target">
                                         <rect key="frame" x="213" y="362" width="380" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="dave-macbook-pro" id="LB7-DA-OjI">
                                             <font key="font" metaFont="system"/>
@@ -475,7 +475,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4K-4k-Eda" customClass="EditableNSTextField" customModule="Ziti_Desktop_Edge" customModuleProvider="target">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4K-4k-Eda" customClass="EditableNSTextField" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target">
                                         <rect key="frame" x="213" y="338" width="380" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://18.204.122.162:1080/" id="1pj-7Y-z3L">
                                             <font key="font" metaFont="system"/>
@@ -483,7 +483,7 @@ Gw
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-YU-hJE" customClass="EditableNSTextField" customModule="Ziti_Desktop_Edge" customModuleProvider="target">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-YU-hJE" customClass="EditableNSTextField" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target">
                                         <rect key="frame" x="213" y="314" width="380" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="v0.0.0" id="VDm-rb-7ag">
                                             <font key="font" metaFont="system"/>
@@ -809,10 +809,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="85" y="917.5"/>
         </scene>
-        <!--Ziti Desktop Edge Config-->
+        <!--Z-Gate Agent Desktop Config-->
         <scene sceneID="S7K-QY-luD">
             <objects>
-                <viewController title="Ziti Desktop Edge Config" showSeguePresentationStyle="single" id="c8W-la-m0J" customClass="TunnelConfigViewController" customModule="Ziti_Desktop_Edge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Z-Gate Agent Desktop Config" showSeguePresentationStyle="single" id="c8W-la-m0J" customClass="TunnelConfigViewController" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Kqz-8q-KOl">
                         <rect key="frame" x="0.0" y="0.0" width="573" height="337"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1083,7 +1083,7 @@ Gw
         <!--Snapshot View Controller-->
         <scene sceneID="DyJ-IB-PYj">
             <objects>
-                <viewController id="aGB-cj-k9e" userLabel="Snapshot View Controller" customClass="SnapshotViewController" customModule="Ziti_Desktop_Edge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aGB-cj-k9e" userLabel="Snapshot View Controller" customClass="SnapshotViewController" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wLM-zw-taZ">
                         <rect key="frame" x="0.0" y="0.0" width="823" height="679"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1143,7 +1143,7 @@ Gw
         <!--Services View Controller-->
         <scene sceneID="3Cb-vg-Bcp">
             <objects>
-                <viewController id="5qd-GZ-sfp" customClass="ServicesViewController" customModule="Ziti_Desktop_Edge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5qd-GZ-sfp" customClass="ServicesViewController" customModule="Z_Gate_Agent_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="30s-HX-UgF">
                         <rect key="frame" x="0.0" y="0.0" width="444" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -41,6 +41,6 @@ class Version {
     }
     
     static var verboseStr:String {
-        return "\(Bundle.main.bundleIdentifier ?? "Ziti") Version: \(Version.str), OS: \(osVersion)"
+        return "\(Bundle.main.bundleIdentifier ?? "Z-Gate Agent") Version: \(Version.str), OS: \(osVersion)"
     }
 }

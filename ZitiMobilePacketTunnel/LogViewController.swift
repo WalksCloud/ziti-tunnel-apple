@@ -76,7 +76,7 @@ class LogViewController: UIViewController, UIActivityItemSource {
     
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
         
-        return logURL?.lastPathComponent ?? "\(tag ?? "ziti").log"
+        return logURL?.lastPathComponent ?? "\(tag ?? "z-gate-agent-mobile").log"
     }
     
     

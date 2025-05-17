@@ -21,7 +21,7 @@ import CZiti
 class MainMenuBar : NSObject, NSWindowDelegate {
     static let shared = MainMenuBar()
     
-    let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Ziti"
+    let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Z-Gate Agent Desktop"
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     private var menu:NSMenu!
     private var tunStatusItem:NSMenuItem!
@@ -337,7 +337,7 @@ class MainMenuBar : NSObject, NSWindowDelegate {
                 return
             }
             
-            wc.window?.title = "Ziti Snapshot \(Date())"
+            wc.window?.title = "Z-Gate Agent Snapshot \(Date())"
             if let vc = wc.contentViewController as? SnapshotViewController {
                 vc.textView.textStorage?.mutableString.setString(str)
             }
