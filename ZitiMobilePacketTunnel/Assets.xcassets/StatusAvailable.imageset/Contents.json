@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "StatusAvailable.png",
       "idiom" : "universal",
-      "filename" : "Status_Available.png",
       "scale" : "1x"
     },
     {
+      "filename" : "StatusAvailable@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "StatusAvailable@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
