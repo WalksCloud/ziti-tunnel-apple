@@ -63,7 +63,6 @@
 		5A411E812523583F005EE351 /* ziti.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A411E7F2523583E005EE351 /* ziti.c */; };
 		5A5539102558425900C02F03 /* ZitiPostureChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55390F2558425900C02F03 /* ZitiPostureChecks.swift */; };
 		5A5539112558425900C02F03 /* ZitiPostureChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55390F2558425900C02F03 /* ZitiPostureChecks.swift */; };
-		5A6BA25D226DE5FB00224F09 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BA25C226DE5FB00224F09 /* AboutViewController.swift */; };
 		5A6BA260226DF2C500224F09 /* Notices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BA25F226DF2C500224F09 /* Notices.rtf */; };
 		5A6BA261226DF2E300224F09 /* Notices.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BA25F226DF2C500224F09 /* Notices.rtf */; };
 		5A6BA263226DF65C00224F09 /* NoticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BA262226DF65C00224F09 /* NoticesViewController.swift */; };
@@ -258,7 +257,6 @@
 		5A379AD0221F937D00051475 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		5A411E7F2523583E005EE351 /* ziti.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ziti.c; sourceTree = "<group>"; };
 		5A55390F2558425900C02F03 /* ZitiPostureChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitiPostureChecks.swift; sourceTree = "<group>"; };
-		5A6BA25C226DE5FB00224F09 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5A6BA25F226DF2C500224F09 /* Notices.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Notices.rtf; sourceTree = "<group>"; };
 		5A6BA262226DF65C00224F09 /* NoticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticesViewController.swift; sourceTree = "<group>"; };
 		5A6BA264226F6AB400224F09 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
@@ -462,7 +460,6 @@
 				5A34E962227916BA00E221DD /* LogsTableViewController.swift */,
 				5AF50FE5257D82760092DC47 /* LogLevelViewController.swift */,
 				5A6BA262226DF65C00224F09 /* NoticesViewController.swift */,
-				5A6BA25C226DE5FB00224F09 /* AboutViewController.swift */,
 				5AF9C2492268F84A009CFD71 /* IdentityViewController.swift */,
 				5A9417C92880975100EEE6BD /* MfaVerifyViewController.swift */,
 				5AF05FB12884445F006CD604 /* MfaCodeViewController.swift */,
@@ -918,7 +915,6 @@
 				5A34E96522791FCA00E221DD /* LogViewController.swift in Sources */,
 				5A91B4CB2222E19E006C4277 /* ZitiIdentity.swift in Sources */,
 				5AB0FDD8265B2E0700B41D58 /* IpcMessages.swift in Sources */,
-				5A6BA25D226DE5FB00224F09 /* AboutViewController.swift in Sources */,
 				5A2EA2CC209B750A00437608 /* AppDelegate.swift in Sources */,
 				5A8702DA22372F6400314199 /* DateFormatter+timeAgo.swift in Sources */,
 				5ABA5EDC2274D2EC00B2221D /* Logger.swift in Sources */,

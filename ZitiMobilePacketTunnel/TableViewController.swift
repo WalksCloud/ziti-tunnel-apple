@@ -97,11 +97,18 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
     weak var ivc:IdentityViewController?
     let sc = ScannerViewController()
 
-    var cells = [
+    let cells = [
         //"FEEDBACK_CELL",
         //"HELP_CELL",
         "ADVANCED_CELL",
         "ABOUT_CELL",
+        "ABOUT_CELL",
+        "ABOUT_CELL",
+    ]
+    let about_cells = [
+        ["Privacy Policy", "PRIVACY_POLICY_URL"],
+        ["Terms of Service", "TERMS_URL"],
+        ["Third Policy Licences", "NOTICES_VC"],
     ]
 
     override func viewDidLoad() {
@@ -284,6 +291,7 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
             }
         } else {
             // feedback, help, advanced, about
+            /*
             if indexPath.row == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "FEEDBACK_CELL", for: indexPath)
             } else if indexPath.row == 1 {
@@ -293,7 +301,18 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "ABOUT_CELL", for: indexPath)
             }
-            cell = tableView.dequeueReusableCell(withIdentifier: self.cells[indexPath.row], for: indexPath)
+            */
+            let cell_id = self.cells[indexPath.row]
+            cell = tableView.dequeueReusableCell(withIdentifier: cell_id, for: indexPath)
+            if cell_id == "ABOUT_CELL" {
+                let _cells = Array(self.cells[0..<indexPath.row + 1])
+                let idx = _cells.count { _c in
+                    _c == "ABOUT_CELL"
+                } - 1
+                if idx >= 0 {
+                    cell?.textLabel?.text = self.about_cells[idx][0]
+                }
+            }
         }
         return cell! // Don't let this happen!
     }
@@ -307,6 +326,13 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
         return nil
     }
     
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 2 {
+            return "Version \(Version.str)"
+        }
+        return nil
+    }
+
     func deviceName() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -447,6 +473,31 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
                 if let url = URL(string: zitiHelpUrl) {
                     let vc = SFSafariViewController(url: url)
                     present(vc, animated: true)
+                }
+            }
+            case "ABOUT_CELL": do {
+                let _cells = Array(self.cells[0..<indexPath.row + 1])
+                let idx = _cells.count { _c in
+                    _c == "ABOUT_CELL"
+                } - 1
+                if idx >= 0 {
+                    let _action = self.about_cells[idx][1]
+                    switch _action {
+                    case "NOTICES_VC": do {
+                        if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: _action) as? NoticesViewController {
+                            navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                    default:
+                        if let str = Bundle.main.object(forInfoDictionaryKey: _action) {
+                            if let url = URL(string: "\(str)") {
+                                let vc = SFSafariViewController(url: url)
+                                present(vc, animated: true)
+                            }
+                        } else {
+                            zLog.error("Invalid \(_action)")
+                        }
+                    }
                 }
             }
             default: break
