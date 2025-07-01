@@ -770,11 +770,11 @@
 			};
 			buildConfigurationList = 5A02AAAF206EBD7E006261C6 /* Build configuration list for PBXProject "ZitiPacketTunnel" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hant";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 5A02AAAB206EBD7E006261C6;
 			packageReferences = (

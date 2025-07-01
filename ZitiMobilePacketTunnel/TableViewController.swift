@@ -342,11 +342,7 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
                 
             }
         }
-        if modelCode != nil {
-            return String(cString: modelCode!, encoding: .utf8) ?? ""
-        } else {
-            return ""
-        }
+        return String(cString: modelCode?.cString(using: .utf8) ?? [])
     }
     
     func addViaJWTFile() {
@@ -433,8 +429,8 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
             switch self.cells[indexPath.row] {
             case "FEEDBACK_CELL": do {
                 // quick 'n dirty support email composer.  TODO: Look into Instabug
-                let supportEmail = Bundle.main.infoDictionary?["ZitiSupportEmail"] as? String ?? ""
-                let supportSubj = Bundle.main.infoDictionary?["ZitiSupportSubject"] as? String ?? ""
+                let supportEmail = Bundle.main.infoDictionary?["ZGateSupportEmail"] as? String ?? ""
+                let supportSubj = Bundle.main.infoDictionary?["ZGateSupportSubject"] as? String ?? ""
                 if MFMailComposeViewController.canSendMail() {
                     let mail = MFMailComposeViewController()
                     mail.mailComposeDelegate = self
@@ -469,7 +465,7 @@ class TableViewController: UITableViewController, UIDocumentPickerDelegate, MFMa
                 }
             }
             case "HELP_CELL": do {
-                let zitiHelpUrl = Bundle.main.infoDictionary?["ZitiHelpURL"] as? String ?? ""
+                let zitiHelpUrl = Bundle.main.infoDictionary?["ZGateHelpURL"] as? String ?? ""
                 if let url = URL(string: zitiHelpUrl) {
                     let vc = SFSafariViewController(url: url)
                     present(vc, animated: true)

@@ -140,11 +140,11 @@
 			</dict>
 		</dict>
 	</array>
-	<key>ZitiHelpURL</key>
+	<key>ZGateHelpURL</key>
 	<string>$(HELP_URL)</string>
-	<key>ZitiSupportEmail</key>
+	<key>ZGateSupportEmail</key>
 	<string>$(SUPPORT_EMAIL)</string>
-	<key>ZitiSupportSubject</key>
+	<key>ZGateSupportSubject</key>
 	<string>Z-Gate Support</string>
 	<key>TeamIdentifierPrefix</key>
 	<string>$(TeamIdentifierPrefix)</string>
