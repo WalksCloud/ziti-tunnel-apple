@@ -156,11 +156,13 @@ jobs:
           -archivePath ./archives/${SCHEME}
 
     - name: Export
+      id: export
       env:
         SCHEME: ${{ matrix.spec.scheme }}
         AUTH_KEY_ID: ${{ secrets.APPLE_DEVELOPER_KEY_ID }}
         AUTH_KEY_ISSUER_ID: ${{ secrets.APPLE_DEVELOPER_KEY_ISSUER_ID }}
         EXPORT_OPTIONS_PLIST: ${{ matrix.spec.exportOptions }}
+      timeout-minutes: 10
       run: |
         case "$(defaults read $(realpath ${EXPORT_OPTIONS_PLIST}) method)" in
         app-store)
@@ -176,10 +178,13 @@ jobs:
           ARCHIVE_TARGET_PATH_PREFIX=${ARCHIVE_PATH}/Products/Applications/${{ steps.get_app_info.outputs.application }}
           ARCHIVE_APP_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.app
           ARCHIVE_ZIP_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.zip
-          ARCHIVE_PKG_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.pkg
           RELEASE_PKG_APP_PATH=./pkg/Applications/${{ steps.get_app_info.outputs.application }}.app
           RELEASE_UNSIGNED_PKG_PATH=./release/${{ steps.get_app_info.outputs.application }}-unsign.pkg
           RELEASE_SIGNED_PKG_PATH=./release/${{ steps.get_app_info.outputs.application }}.pkg
+
+          echo "ARCHIVE_ZIP_PATH=${ARCHIVE_ZIP_PATH}" >> $GITHUB_OUTPUT
+          echo "RELEASE_UNSIGNED_PKG_PATH=${RELEASE_UNSIGNED_PKG_PATH}" >> $GITHUB_OUTPUT
+          echo "RELEASE_SIGNED_PKG_PATH=${RELEASE_SIGNED_PKG_PATH}" >> $GITHUB_OUTPUT
 
           mkdir -p ./release ./pkg
           codesign -dvv "${ARCHIVE_APP_PATH}"
@@ -268,8 +273,11 @@ jobs:
       if: always()
       with:
         draft: true
-        fail_on_unmatched_files: true
+        fail_on_unmatched_files: false
         files: |
+          ${{ steps.export.outputs.ARCHIVE_ZIP_PATH }}
+          ${{ steps.export.outputs.RELEASE_UNSIGNED_PKG_PATH }}
+          ${{ steps.export.outputs.RELEASE_SIGNED_PKG_PATH }}
           ${{ steps.validate_app.outputs.package_path }}
 
   draft-release:
