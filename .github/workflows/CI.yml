@@ -178,17 +178,29 @@ jobs:
           ARCHIVE_TARGET_PATH_PREFIX=${ARCHIVE_PATH}/Products/Applications/${{ steps.get_app_info.outputs.application }}
           ARCHIVE_APP_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.app
           ARCHIVE_ZIP_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.zip
+          ARCHIVE_APPEX_ZIP_PATH=${ARCHIVE_TARGET_PATH_PREFIX}.appex.zip
           RELEASE_PKG_APP_PATH=./pkg/Applications/${{ steps.get_app_info.outputs.application }}.app
           RELEASE_UNSIGNED_PKG_PATH=./release/${{ steps.get_app_info.outputs.application }}-unsign.pkg
           RELEASE_SIGNED_PKG_PATH=./release/${{ steps.get_app_info.outputs.application }}.pkg
 
           echo "ARCHIVE_ZIP_PATH=${ARCHIVE_ZIP_PATH}" >> $GITHUB_OUTPUT
+          echo "ARCHIVE_APPEX_ZIP_PATH=${ARCHIVE_APPEX_ZIP_PATH}" >> $GITHUB_OUTPUT
           echo "RELEASE_UNSIGNED_PKG_PATH=${RELEASE_UNSIGNED_PKG_PATH}" >> $GITHUB_OUTPUT
           echo "RELEASE_SIGNED_PKG_PATH=${RELEASE_SIGNED_PKG_PATH}" >> $GITHUB_OUTPUT
 
           mkdir -p ./release ./pkg
+
+          codesign -dvv "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex"
+          codesign -fs "${{ secrets.DEVELOPER_ID_NAME }}" --options runtime "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex"
+          codesign -dvv "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex"
+          ditto -c -k --keepParent "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex" "${ARCHIVE_APPEX_ZIP_PATH}"
+          xcrun -l notarytool submit "${ARCHIVE_APPEX_ZIP_PATH}" --wait --verbose \
+            --key ${{ steps.store_api_key.outputs.api_key_fn }} --key-id "${AUTH_KEY_ID}" --issuer "${AUTH_KEY_ISSUER_ID}"
+          stapler staple --verbose "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex"
+          stapler validate --verbose "${ARCHIVE_APP_PATH}/Contents/PlugIns/PacketTunnelProvider.appex"
+
           codesign -dvv "${ARCHIVE_APP_PATH}"
-          codesign -fs "${{ secrets.DEVELOPER_ID_NAME }}" "${ARCHIVE_APP_PATH}"
+          codesign -fs "${{ secrets.DEVELOPER_ID_NAME }}" --options runtime --entitlements ZitiPacketTunnel/ZitiPacketTunnel.entitlements "${ARCHIVE_APP_PATH}"
           codesign -dvv "${ARCHIVE_APP_PATH}"
           ditto -c -k --keepParent "${ARCHIVE_APP_PATH}" "${ARCHIVE_ZIP_PATH}"
           xcrun -l notarytool submit "${ARCHIVE_ZIP_PATH}" --wait --verbose \
@@ -276,6 +288,7 @@ jobs:
         fail_on_unmatched_files: false
         files: |
           ${{ steps.export.outputs.ARCHIVE_ZIP_PATH }}
+          ${{ steps.export.outputs.ARCHIVE_APPEX_ZIP_PATH }}
           ${{ steps.export.outputs.RELEASE_UNSIGNED_PKG_PATH }}
           ${{ steps.export.outputs.RELEASE_SIGNED_PKG_PATH }}
           ${{ steps.validate_app.outputs.package_path }}
